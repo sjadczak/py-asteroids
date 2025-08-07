@@ -80,6 +80,8 @@ def main():
         for d in drawable:
             d.draw(screen)
 
+        logger.debug(f"Asteroid count: {len(asteroids)}, Shot count: {len(shots)}")
+        
         # Refresh display & advance clock @ 60 FPS
         pygame.display.flip()
         dt = clock.tick(60) / 1000
