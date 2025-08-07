@@ -81,3 +81,16 @@ class Player(CircleShape):
             logger.debug("player.update(): `SPACE` pressed")
             self.shoot()
 
+        # wrap screen
+        if self.position.x < -self.radius:
+            self.position.x = SCREEN_WIDTH
+
+        if self.position.x > SCREEN_WIDTH + self.radius:
+            self.position.x = 0
+
+        if self.position.y < -self.radius:
+            self.position.y = SCREEN_HEIGHT
+
+        if self.position.y > SCREEN_HEIGHT + self.radius:
+            self.position.y = 0
+
